@@ -76,7 +76,7 @@
 	position: fixed;
 	top: 69px;
 	right: 40px;
-	z-index: 1020;
+	z-index: 1050;
 	border-radius: 0px 0px 16px 16px;
 	
 	overflow: auto;
@@ -149,7 +149,7 @@
 	position: fixed;
 	top: 69px;
 	right: 0px;
-	z-index: 1010;
+	z-index: 1040;
 }
 
 .user-submenu ul {
