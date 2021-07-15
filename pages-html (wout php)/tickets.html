@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Тикеты</title>
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="css/tickets.css" rel="stylesheet">
+	<link href="../images/logo.png" rel="icon">
+	<link href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	
+	<!--HEADER-->
+	<header class="main-header">
+		<!--LOGO CONTAINER-->
+		<div class="main-logo-div">
+			<img class="main-logo" src="../images/logo.png" alt="ONECLI. logo">
+			<img class="main-logo-title" src="../images/logo_title.png" alt="ONECLI. logo">
+		</div>
+		<!--HEADER RIGHT SIDE-->
+		<div class="header-user-info div-flex df-spaceb">
+			<!--USER INFO-->
+			<div class="main-user-info" onClick="onClickUserSubmenu()">
+				<span class="user-header-login t-black">User Login</span>
+				<img class="user-header-image" src="../images/bvadimnikol.jpg" alt="Your image">
+			</div>
+			<!--LANGUAGE CHOOSER-->
+			<div class="language-chooser div-flex df-center" onClick="onClickLanguageChooserMenu()">
+				<img src="../images/country-flags/russia.png" alt="russian">
+			</div>
+			<!--NAVIGATION MENU-->
+			<div id="main-header-menu" class="main-header-menu div-flex df-center" onClick="OpenNavMenu()">
+				<!--CLOSED MENU ICON-->
+				<svg class="menu-icon" id="main-menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 19">
+  					<g transform="translate(0 1)">
+ 	   					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+  	 					<line x2="16.349" transform="translate(0 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+  	  					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+				<!--OPENED MENU ICON-->
+				<svg class="menu-icon hidden" id="main-menu-svg-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.349 19">
+  					<g transform="translate(0 1)">
+    					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="16.349" transform="translate(9 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+			</div>
+		</div>
+	</header>
+	
+	<!--USER SETTING SUBMENU-->
+	<div class="user-submenu hidden" id="user_submenu">
+		<ul>
+			<li><a href="../settings/index.html">Аккант</a></li>
+			<li><a href="../settings/index.html">Настройки</a></li>
+			<li><a href="#">На главную</a></li>
+			<li><a href="#">Выход</a></li>
+		</ul>
+	</div>
+	
+	<!--LANGUAGE CHOOSER MENU-->
+	<div class="language-chooser-menu hidden" id="language-chooser-menu">
+		<div><img class="active" src="../images/country-flags/russia.png" alt="russian"></div>
+		<div><img src="../images/country-flags/united-kingdom.png" alt="uk english"></div>
+	</div>
+	
+	<!--NAVIGATION-->
+	<nav class="main-navigation" id="fullNav">
+		<div class="main-navigation-wrapper">
+			<!-- NAVIGATION HEADER -->
+			<div class="nav-header div-flex-two">
+				<span class="t-white">Навигация</span>
+				<img src="../images/menu.png" alt="Menu" onClick="onClickNavigation()">
+			</div>
+			<!-- MENU -->
+			<ul class="menu-list">
+				<li><a href="../investments/index.html"><img src="../images/menu-icons/inv.png" alt="investments">Инвестиции в ONECLI.</a></li>
+				<li><a href="../stats/index.html"><img src="../images/menu-icons/stats.png" alt="investments">Статистика</a></li>
+				<li><a href="../team/index.html"><img src="../images/menu-icons/team.png" alt="team">Моя команда</a></li>
+				<li><a href="../exchange/index.html"><img src="../images/menu-icons/br.png" alt="exchange">Биржа долей</a></li>
+				<li><a href="../history/index.html"><img src="../images/menu-icons/history.png" alt="exchange">История транзакций</a></li>
+				<li><a href="../lots/index.html"><img src="../images/menu-icons/lots.png" alt="lots">Лоты <span class="t-notify">[Beta]</span></a></li>
+				<li><a href="../idea/index.html"><img src="../images/menu-icons/idea.png" alt="idea">Идея ONECLI.</a></li>
+				<li><a href="../bounty/index.html"><img src="../images/menu-icons/btn.png" alt="bounty">Bounty кампания</a></li>
+				<li><a href="../promo/index.html"><img src="../images/menu-icons/promo.png" alt="promo">Промоматериалы</a></li>
+				<li class="menu-active"><a href="../tickets/index.html"><img src="../images/menu-icons/tickets.png" alt="promo">Тикеты ONECLI.</a></li>
+				<li><a href="../faq/index.html"><img src="../images/menu-icons/faq.png" alt="faq">FAQ | Вопрос - ответ</a></li>
+				<li><a href="../game/index.html"><img src="../images/menu-icons/game.png" alt="game">Большая игра ONECLI.</a></li>
+				<li><a href="../news/index.html"><img src="../images/menu-icons/news.png" alt="game">Новости</a></li>
+			</ul>
+			<!-- SOCIALS -->
+			<div class="socials">
+				<ul class="socials-list hidden" id="socials-list">
+					<li><a href="https://www.youtube.com/channel/UClxixUM9qzOjoFtUd5RNBzQ"><img src="../images/socials/yt0.png" alt="YT"></a></li>
+					<li><a href="https://www.facebook.com/oneclicom/"><img src="../images/socials/f0.png" alt="FB"></a></li>
+					<li><a href="https://instagram.com/oneclicom"><img src="../images/socials/i0.png" alt="IN"></a></li>
+					<li><a href="https://twitter.com/oneclicom"><img src="../images/socials/tw0.png" alt="TW"></a></li>
+					<li><a href="https://teleg.one/onecli"><img src="../images/socials/t0.png" alt="TG"></a></li>
+					<li><a href="https://vk.com/onecli"><img src="../images/socials/vk0.png" alt="VK"></a></li>
+				</ul>
+				<span class="t-gray t-size-12" id="socials-h1" onClick="onClickSocials()">СОЦИАЛЬНЫЕ СЕТИ</span>
+				<img src="../images/str_left.png" alt="socials" onClick="onClickSocials()">
+			</div>
+			<!-- CRYPTO SECTION -->
+			<div class="crypto-rate-wrapper">
+				<div class="crypto-header div-flex-two">
+					<span class="t-white">Курсы криптовалют</span>
+					<img src="../images/bitcoin.png" alt="crypt">
+				</div>
+				<ul class="crypto-list">
+					<li>BITCOIN (BTC)<br>9531.19 USD (0.45%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>RIPPLE (XRP)<br>0.309862 USD (0.10%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>BITCOIN CASH (BCH)<br>306.20 USD (0.26%)</li>
+					<li>LITECOIN (LTC)<br>89.13 USD (0.04%)</li>
+					<li>CARDANO (ADA)<br>0.059253 USD (1.35%)</li>
+					<li>EOS (EOS)<br>4.29 USD (-1.51%)</li>
+					<li>STELLAR (XLM)<br>0.083855 USD (0.18%)</li>
+					<li>NEO (NEO)<br>11.39 USD (1.07%)</li>
+					<li>IOTA (MIOTA)<br>0.288540 USD (0.43%)</li>
+					<li>MONERO (XMR)<br>79.88 USD (2.05%)</li>
+					<li>DASH (DASH)<br>111.05 USD (1.23%)</li>
+					<li>TRON (TRX)<br>0.022540 USD (2.60%)</li>
+					<li>NEM (XEM)<br>0.063579 USD (-0.22%)</li>
+					<li>ETHEREUM CLASSIC (ETC)<br>5.95 USD (0.90%)</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!--MODALS-->
+	<div style="display: none;" class="modals">
+		
+		<!--PHOTO MODAL-->
+		<div style="display: none;" class="photo-modal">
+			<p>Нажмите Esc или на эту область, чтобы закрыть окно</p>
+			<img src="images/atta1.jpg" alt="atta1">
+			<p>Нажмите Esc или на эту область, чтобы закрыть окно</p>
+		</div>
+		
+		<div style="display: none;" class="create-modal">
+			<p>Нажмите Esc или на эту область, чтобы закрыть окно</p>
+			<div class="create-modal-wrapper">
+				<div class="tickets-settigns">
+					<h2 class="t-main t-bold-400 t-uppercase t-size-14">Cоздание тикета</h2>
+					<input type="text" placeholder="Введите тему тикета">
+					<div class="related-order">
+						<span>Связанный заказ:</span>
+						<select>
+							<option>Вопрос не связан с заказом</option>
+							<option>???</option>
+							<option>???</option>
+							<option>???</option>
+							<option>???</option>
+						</select>
+					</div>
+					<div class="priority">
+						<span>Приоритет:</span>
+						<div class="priority-wrapper">
+							<div class="standart"><span>Обычный (До 8 часов)</span></div>
+							<div class="non-urgent"><span>Несрочный (24 часа)</span></div>
+							<div class="important">
+								<span>Важный (До 6 часов)</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9">
+  									<circle cx="4.5" cy="4.5" r="4.5" fill="#fff"/>
+								</svg>
+							</div>
+							<div class="urgent"><span>Срочный (В течении часа)</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="second-section">
+					<textarea class="text-area" placeholder="Введите ваше сообщение..."></textarea>
+					<div class="attachments div-flex-two">
+						<p style="display: none;">Нажмите на этот текст или перетащите файлы в данную область чтобы добавить их как вложение к вашему сообщению</p>
+						<div>
+							<div>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+							</div>
+							<div class="div-flex df-col df-center">
+								<span class="t-size-20 t-main">+</span>
+								<span class="t-size-12">Добавить ещё</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="btn">Отправить</button>
+			</div>
+			<p>Нажмите Esc или на эту область, чтобы закрыть окно</p>
+		</div>
+		
+	</div>
+	
+	<!--MAIN CONTENT-->
+	<main class="main-content">
+		
+		<!--TICKETS BUTTONS-->
+		<div class="ticket-btns container">
+			<div class="div-flex-two">
+				<div class="sort div-flex df-center active" onClick="OpenOpenedTickets()"><span>Открытые</span></div>
+				<div class="sort div-flex df-center" onClick="OpenClosedTickets()"><span>Закрытые</span></div>
+			</div>
+			<button class="btn div-flex df-center">Создать тикет +</button>
+		</div>
+		
+		<!--TICKETS WRAPPER-->
+		<div class="tickets-wrapper">
+			<div class="tickets-open" id="opened-tickets">
+				<div class="ticket urgent">
+					<img src="images/urgent.png" alt="urgent">
+					<div>
+						<h3 class="t-bold-400">Продление сертификата</h3>
+						<p>Александр литвинов - Вам лучше обратится к программистам для поиска бекдоров в ваших скриптах и другого вредоносного кода. С нашей сторо..</p>
+					</div>
+					<span>05:42</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">Ошибка PHP</h3>
+						<p>Алексей Сорокин - Благодарим за уточнение.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart new">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket non-urgent">
+					<img src="images/non-urgent.png" alt="non-urgent">
+					<div>
+						<h3 class="t-bold-400">Планируется ДДОС атака в 17:00 МСК на наш сайт</h3>
+						<p>Егор Свистун - DDoS атака завершилась. Защиту отключили.</p>
+					</div>
+					<span>Вчера</span>
+				</div>
+				<div class="ticket important">
+					<img src="images/important.png" alt="important">
+					<div>
+						<h3 class="t-bold-400">Планируется ДДОС атака в 17:00 МСК на наш сайт</h3>
+						<p>Егор Свистун - DDoS атака завершилась. Защиту отключили.</p>
+					</div>
+					<span>Вчера</span>
+				</div>
+			</div>
+			<div class="tickets-close hidden" id="closed-tickets">
+				<div class="ticket urgent">
+					<img src="images/urgent.png" alt="urgent">
+					<div>
+						<h3 class="t-bold-400">Продление сертификата</h3>
+						<p>Александр литвинов - Вам лучше обратится к программистам для поиска бекдоров в ваших скриптах и другого вредоносного кода. С нашей сторо..</p>
+					</div>
+					<span>05:42</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">Ошибка PHP</h3>
+						<p>Алексей Сорокин - Благодарим за уточнение.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+				<div class="ticket standart new">
+					<img src="images/standart.png" alt="standart">
+					<div>
+						<h3 class="t-bold-400">А так выглядит тикет при наведении..</h3>
+						<p>Марат Алимов - Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения. Показ наведения.</p>
+					</div>
+					<span>05:37</span>
+				</div>
+			</div>
+			<div style="display: none;" class="ticket-chat">
+				<div class="chat-header">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18.963" height="11.012" viewBox="0 0 18.963 11.012">
+  						<g transform="translate(0.829 0.386)">
+    						<line x2="18.135" transform="translate(0 5.037)" fill="none" stroke="#232733" stroke-width="1"/>
+    						<path d="M.044,0l-6.1,5.014,6.1,5.233" transform="translate(6.001 0)" fill="none" stroke="#232733" stroke-width="1"/>
+  						</g>
+					</svg>
+					<span><span class="t-bold-400">Тикет создан:</span> 26 апреля 2020 г. 16:21</span>
+					<span><span>Заказ:</span> 34-192155 DS CUSTOM3470SYB</span>
+					<span><span>Приоритет:</span> <span class="urgent">Срочный (в течение часа)</span></span>
+				</div>
+				<div class="chat">
+					<div class="header">
+						<h2>ПЛАНИРУЕТСЯ ДДОС АТАКА В 17:00 МСК НА НАШ САЙТ</h2>
+						<p>Приветствую! На наш ресурс <a href="onecli.com">onecli.com</a> планируется ДДОС атака в 17:00 МСК</p>
+						<p>Как нам лучше поступить?</p>
+						<p>Выдержка их письма, которое пришло нам:</p>
+						<hr width="300px">
+					</div>
+					<div class="mes">
+						<img src="images/sup.jpg" alt="urgent">
+						<div>
+							<h3 class="t-bold-400">Оператор поддержки:</h3>
+							<p>Добрый день. Скорее всего, это не будет DDoS-атака. Вам лучше обратится к программистам для поиска бекдоров в ваших скриптах и другого вредоносного</p>
+						</div>
+						<span class="date">05:42</span>
+					</div>
+					<hr width="300px">
+					<div class="mes you">
+						<img src="images/unnamed.png" alt="urgent">
+						<div>
+							<h3 class="t-bold-400">Вы:</h3>
+							<p>Хорошо, буду ожидать.</p>
+						</div>
+						<span class="date">11:14</span>
+					</div>
+					<hr width="300px">
+					<div class="mes">
+						<img src="images/sup.jpg" alt="urgent">
+						<div>
+							<h3 class="t-bold-400">Оператор поддержки:</h3>
+							<p>Добрый день. Скорее всего, это не будет DDoS-атака. Вам лучше обратится к программистам для поиска бекдоров в ваших скриптах и другого вредоносного кода. С нашей стороны, если будет зафиксирована DDoS-атака, мы подключим свою систему фильтрации.</p>
+						</div>
+						<span class="date">05:42</span>
+					</div>
+					<hr width="300px">
+					<div class="mes you">
+						<img src="images/unnamed.png" alt="urgent">
+						<div>
+							<h3 class="t-bold-400">Вы:</h3>
+							<p>Присылаю 2 фотографии для осмотра во вложении (Как это выглядит в макете под этим)</p>
+							<div class="attachments">
+								<img src="images/atta1.jpg">
+								<img src="images/atta2.jpg">
+								<img src="images/atta2.jpg">
+								<img src="images/atta1.jpg">
+								<img src="images/atta2.jpg">
+								<img src="images/atta1.jpg">
+							</div>
+						</div>
+						<span class="date">11:14</span>
+					</div>
+					<hr width="300px">
+					<div class="mes new">
+						<img src="images/sup.jpg" alt="urgent">
+						<div>
+							<h3 class="t-bold-400">Оператор поддержки:</h3>
+							<p>Добрый день. Скорее всего, это не будет DDoS-атака. Вам лучше обратится к программистам для поиска бекдоров в ваших скриптах и другого вредоносного кода. С нашей стороны, если будет зафиксирована DDoS-атака, мы подключим свою систему фильтрации.</p>
+						</div>
+						<span class="date">05:42</span>
+					</div>
+					<div class="reopen div-flex df-center">
+						<span>Открыть тикет заново</span>
+						<svg style="margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="15.026" height="15.026" viewBox="0 0 15.026 15.026">
+  							<path d="M0,0H15.026V15.026H0Z" fill="none"/>
+  							<path d="M9.009,3.5V1L5.878,4.13l3.13,3.13v-2.5A3.757,3.757,0,1,1,5.252,8.513H4A5.009,5.009,0,1,0,9.009,3.5Z" transform="translate(-1.496 -0.374)" fill="#8b99c2"/>
+						</svg>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="text">
+						<textarea class="text-area" placeholder="Введите ваше сообщение..."></textarea>
+					</div>
+					<div class="attachments div-flex-two">
+						<p style="display: none;">Нажмите на этот текст или перетащите файлы в данную область чтобы добавить их как вложение к вашему сообщению</p>
+						<div>
+							<div>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+								<p>КартинкаВложение6.png</p>
+							</div>
+							<div class="div-flex df-col df-center">
+								<span class="t-size-20 t-main">+</span>
+								<span class="t-size-12">Добавить ещё</span>
+							</div>
+						</div>
+					</div>
+					<div class="btn-section div-flex df-center">
+						<button class="btn">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</main>
+	
+	<!--SCRIPTS-->
+	<script src="../scripts/main.js"></script>
+	<script src="tickets.js"></script>	
+</body>
+</html>

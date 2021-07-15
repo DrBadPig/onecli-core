@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Лоты</title>
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/header.css" rel="stylesheet">
+	<link href="css/lots.css" rel="stylesheet">
+	<link href="../history/css/history.css" rel="stylesheet">
+	<link href="../images/logo.png" rel="icon">
+	<link href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<!--HEADER-->
+	<header class="main-header">
+		<!--LOGO CONTAINER-->
+		<div class="main-logo-div">
+			<img class="main-logo" src="../images/logo.png" alt="ONECLI. logo">
+			<img class="main-logo-title" src="../images/logo_title.png" alt="ONECLI. logo">
+		</div>
+		<!--HEADER RIGHT SIDE-->
+		<div class="header-user-info div-flex df-spaceb">
+			<!--USER INFO-->
+			<div class="main-user-info" onClick="onClickUserSubmenu()">
+				<span class="user-header-login t-black">User Login</span>
+				<img class="user-header-image" src="../images/bvadimnikol.jpg" alt="Your image">
+			</div>
+			<!--LANGUAGE CHOOSER-->
+			<div class="language-chooser div-flex df-center" onClick="onClickLanguageChooserMenu()">
+				<img src="../images/country-flags/russia.png" alt="russian">
+			</div>
+			<!--NAVIGATION MENU-->
+			<div id="main-header-menu" class="main-header-menu div-flex df-center" onClick="OpenNavMenu()">
+				<!--CLOSED MENU ICON-->
+				<svg class="menu-icon" id="main-menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 19">
+  					<g transform="translate(0 1)">
+ 	   					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+  	 					<line x2="16.349" transform="translate(0 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+  	  					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+				<!--OPENED MENU ICON-->
+				<svg class="menu-icon hidden" id="main-menu-svg-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.349 19">
+  					<g transform="translate(0 1)">
+    					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="16.349" transform="translate(9 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+			</div>
+		</div>
+	</header>
+	
+	<!--USER SETTING SUBMENU-->
+	<div class="user-submenu hidden" id="user_submenu">
+		<ul>
+			<li><a href="../settings/index.html">Аккант</a></li>
+			<li><a href="../settings/index.html">Настройки</a></li>
+			<li><a href="#">На главную</a></li>
+			<li><a href="#">Выход</a></li>
+		</ul>
+	</div>
+	
+	<!--LANGUAGE CHOOSER MENU-->
+	<div class="language-chooser-menu hidden" id="language-chooser-menu">
+		<div><img class="active" src="../images/country-flags/russia.png" alt="russian"></div>
+		<div><img src="../images/country-flags/united-kingdom.png" alt="uk english"></div>
+	</div>
+	
+	<!--NAVIGATION FULL-->
+	<nav class="main-navigation" id="fullNav">
+		<div class="main-navigation-wrapper">
+			<!-- NAVIGATION HEADER -->
+			<div class="nav-header div-flex-two">
+				<span class="t-white">Навигация</span>
+				<img src="../images/menu.png" alt="Menu" onClick="onClickNavigation()">
+			</div>
+			<!-- MENU -->
+			<ul class="menu-list">
+				<li><a href="../investments/index.html"><img src="../images/menu-icons/inv.png" alt="investments">Инвестиции в ONECLI.</a></li>
+				<li><a href="../stats/index.html"><img src="../images/menu-icons/stats.png" alt="investments">Статистика</a></li>
+				<li><a href="../team/index.html"><img src="../images/menu-icons/team.png" alt="team">Моя команда</a></li>
+				<li><a href="../exchange/index.html"><img src="../images/menu-icons/br.png" alt="exchange">Биржа долей</a></li>
+				<li><a href="../history/index.html"><img src="../images/menu-icons/history.png" alt="exchange">История транзакций</a></li>
+				<li class="menu-active"><a href="../lots/index.html"><img src="../images/menu-icons/lots.png" alt="lots">Лоты <span class="t-notify">[Beta]</span></a></li>
+				<li><a href="../idea/index.html"><img src="../images/menu-icons/idea.png" alt="idea">Идея ONECLI.</a></li>
+				<li><a href="../bounty/index.html"><img src="../images/menu-icons/btn.png" alt="bounty">Bounty кампания</a></li>
+				<li><a href="../promo/index.html"><img src="../images/menu-icons/promo.png" alt="promo">Промоматериалы</a></li>
+				<li><a href="../tickets/index.html"><img src="../images/menu-icons/tickets.png" alt="promo">Тикеты ONECLI.</a></li>
+				<li><a href="../faq/index.html"><img src="../images/menu-icons/faq.png" alt="faq">FAQ | Вопрос - ответ</a></li>
+				<li><a href="../game/index.html"><img src="../images/menu-icons/game.png" alt="game">Большая игра ONECLI.</a></li>
+				<li><a href="../news/index.html"><img src="../images/menu-icons/news.png" alt="game">Новости</a></li>
+			</ul>
+			<!-- SOCIALS -->
+			<div class="socials">
+				<ul class="socials-list hidden" id="socials-list">
+					<li><a href="https://www.youtube.com/channel/UClxixUM9qzOjoFtUd5RNBzQ"><img src="../images/socials/yt0.png" alt="YT"></a></li>
+					<li><a href="https://www.facebook.com/oneclicom/"><img src="../images/socials/f0.png" alt="FB"></a></li>
+					<li><a href="https://instagram.com/oneclicom"><img src="../images/socials/i0.png" alt="IN"></a></li>
+					<li><a href="https://twitter.com/oneclicom"><img src="../images/socials/tw0.png" alt="TW"></a></li>
+					<li><a href="https://teleg.one/onecli"><img src="../images/socials/t0.png" alt="TG"></a></li>
+					<li><a href="https://vk.com/onecli"><img src="../images/socials/vk0.png" alt="VK"></a></li>
+				</ul>
+				<span class="t-gray t-size-12" id="socials-h1" onClick="onClickSocials()">СОЦИАЛЬНЫЕ СЕТИ</span>
+				<img src="../images/str_left.png" alt="socials" onClick="onClickSocials()">
+			</div>
+			<!-- CRYPTO SECTION -->
+			<div class="crypto-rate-wrapper">
+				<div class="crypto-header div-flex-two">
+					<span class="t-white">Курсы криптовалют</span>
+					<img src="../images/bitcoin.png" alt="crypt">
+				</div>
+				<ul class="crypto-list">
+					<li>BITCOIN (BTC)<br>9531.19 USD (0.45%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>RIPPLE (XRP)<br>0.309862 USD (0.10%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>BITCOIN CASH (BCH)<br>306.20 USD (0.26%)</li>
+					<li>LITECOIN (LTC)<br>89.13 USD (0.04%)</li>
+					<li>CARDANO (ADA)<br>0.059253 USD (1.35%)</li>
+					<li>EOS (EOS)<br>4.29 USD (-1.51%)</li>
+					<li>STELLAR (XLM)<br>0.083855 USD (0.18%)</li>
+					<li>NEO (NEO)<br>11.39 USD (1.07%)</li>
+					<li>IOTA (MIOTA)<br>0.288540 USD (0.43%)</li>
+					<li>MONERO (XMR)<br>79.88 USD (2.05%)</li>
+					<li>DASH (DASH)<br>111.05 USD (1.23%)</li>
+					<li>TRON (TRX)<br>0.022540 USD (2.60%)</li>
+					<li>NEM (XEM)<br>0.063579 USD (-0.22%)</li>
+					<li>ETHEREUM CLASSIC (ETC)<br>5.95 USD (0.90%)</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!--MODALS-->
+	<div style="display: none;" class="modals">
+		<!--SEND SUCCESS MODAL-->
+		<div style="display: none;" class="send-success-modal">
+			<div class="modal-full-wrapper">
+				<div class="modal-close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.798" height="14.798" viewBox="0 0 14.798 14.798">
+  						<g transform="translate(0.707 0.707)">
+    						<line x2="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+    						<line x1="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+  						</g>
+					</svg>			
+				</div>
+				<p>10 RTX пользователю Millioner  успешно отправлено!</p>
+				<hr width="70%">
+			</div>
+		</div>
+		
+		<!--MONEY PROCESSING MODAL-->
+		<div style="display: none;" class="money-processing-modal">
+			<div class="modal-full-wrapper">
+				<div class="modal-close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.798" height="14.798" viewBox="0 0 14.798 14.798">
+  						<g transform="translate(0.707 0.707)">
+    						<line x2="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+    						<line x1="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+  						</g>
+					</svg>			
+				</div>
+				<p>Спасибо! Ваша заявка на сумму <span>50$</span> принята! Все заявки обрабатываются оператором! Вывод занимает до <span>72</span> часов!</p>
+				<hr width="70%">
+			</div>
+		</div>
+		
+		<!--ORDERING MODAL-->
+		<div style="display: none;" class="ordering-modal">
+			<div class="modal-full-wrapper">
+				<div class="modal-close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.798" height="14.798" viewBox="0 0 14.798 14.798">
+  						<g transform="translate(0.707 0.707)">
+    						<line x2="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+    						<line x1="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+  						</g>
+					</svg>			
+				</div>
+				<h2 class="t-bold-300 t-darkgray t-uppercase">Оформление заказа</h2>
+				<div class="text">
+					<span>Сумма выигранного Вами лота: <span class="t-main">47RTX</span></span>
+					<div><span>Вы получите <span class="t-main">100RTX</span> после оплаты <span class="t-main">47RTX</span></span><span class="tip">1 RTX = 0,5$</span></div>
+					<span>Ваша прибыль с лота составляет: <span class="t-main">53RTX (53%)</span></span>
+					<span>Вы покупаете лот <span class="t-main">№1234567</span> на сумму <span class="t-main">50$</span></span>
+				</div>
+				<button class="btn">Оплатить</button>
+			</div>
+		</div>
+		
+		<!--SEND TO A FRIEND MODAL-->
+		<div style="display: none;" class="send-friend-modal">
+			<div class="modal-full-wrapper">
+				<div class="modal-close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.798" height="14.798" viewBox="0 0 14.798 14.798">
+  						<g transform="translate(0.707 0.707)">
+    						<line x2="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+    						<line x1="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+  						</g>
+					</svg>			
+				</div>
+				<h2 class="t-bold-300 t-darkgray t-uppercase">Отправить RTX</h2>
+				<p class="t-gray t-size-14 t-bold-300">При отправке RTX, Вам на E-mail будет отправлен PIN-код, который нужно ввести в поле ниже</p>
+				<input type="text" placeholder="Логин">
+				<input type="text" placeholder="Количество">
+				<input type="text" placeholder="PIN-код">
+				<button class="btn">Запросить PIN</button>
+				<button class="btn">Отправить</button>
+				<span class="t-gray">Письмо успешно отправлено</span>
+			</div>
+		</div>
+		
+		<!--CART MODAL-->
+		<div style="display: none;" class="cart-modal">
+			<div class="modal-full-wrapper">
+				<div class="modal-close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.798" height="14.798" viewBox="0 0 14.798 14.798">
+  						<g transform="translate(0.707 0.707)">
+    						<line x2="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+    						<line x1="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+  						</g>
+					</svg>			
+				</div>
+				<table class="cart-table">
+					<tr>
+						<th>Название</th>
+						<th>Номинал лота</th>
+						<th>Цена</th>
+						<th>Время на покупку</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>Лот <span class="t-bold-400">№23017</span></td>
+						<td>21.20 ONX</td>
+						<td>02:17:43</td>
+						<td>526$</td>
+						<td>Купить</td>
+					</tr>
+					<tr>
+						<td>Лот <span class="t-bold-400">№23017</span></td>
+						<td>21.20 ONX</td>
+						<td>02:17:43</td>
+						<td>526$</td>
+						<td>Купить</td>
+					</tr>
+					<tr>
+						<td>Лот <span class="t-bold-400">№23017</span></td>
+						<td>21.20 ONX</td>
+						<td>02:17:43</td>
+						<td>526$</td>
+						<td>Купить</td>
+					</tr>
+					<tr>
+						<td>Лот <span class="t-bold-400">№23017</span></td>
+						<td>21.20 ONX</td>
+						<td>02:17:43</td>
+						<td>526$</td>
+						<td>Купить</td>
+					</tr>
+					<tr>
+						<td>Лот <span class="t-bold-400">№23017</span></td>
+						<td>21.20 ONX</td>
+						<td>02:17:43</td>
+						<td>526$</td>
+						<td>Купить</td>
+					</tr>
+					<tr>
+						<td>Лот <span class="t-bold-400">№23017</span></td>
+						<td>21.20 ONX</td>
+						<td>02:17:43</td>
+						<td>526$</td>
+						<td>Купить</td>
+					</tr>
+					<tr>
+						<td>Лот <span class="t-bold-400">№23017</span></td>
+						<td>21.20 ONX</td>
+						<td>02:17:43</td>
+						<td>526$</td>
+						<td>Купить</td>
+					</tr>
+				</table>
+				<div class="bottom-menu">
+					<div class="pager">
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  							<g opacity="0.5">
+    							<g fill="none" stroke="#4f5a7b" stroke-width="1">
+      								<circle cx="12.5" cy="12.5" r="12.5" stroke="none"></circle>
+      								<circle cx="12.5" cy="12.5" r="12" fill="none"></circle>
+    							</g>
+    							<path d="M6.1,11.079h0L0,5.477,6.1,0l.818,1.267L2.334,5.477,7,9.766v.1l-.9,1.213Z" transform="translate(8.3 6.563)" fill="#4f5a7b"></path>
+  							</g>
+						</svg>
+						<span><span class="t-main">1</span> | 2</span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  							<g opacity="0.5">
+    							<g fill="none" stroke="#4f5a7b" stroke-width="1">
+      								<circle cx="12.5" cy="12.5" r="12.5" stroke="none"></circle>
+      								<circle cx="12.5" cy="12.5" r="12" fill="none"></circle>
+    							</g>
+    							<path d="M6.1,0h0L0,5.6l6.1,5.477.818-1.267L2.334,5.6,7,1.313v-.1L6.1,0Z" transform="translate(16.7 17.642) rotate(180)" fill="#4f5a7b"></path>
+  							</g>
+						</svg>
+					</div>
+					<div class="type">
+						<span class="t-uppercase t-italic"><span>Оплаченные</span> | <span class="t-main">В обработке</span> | <span>Отправленные</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--REFILL MODAL-->
+		<div style="display: none;" class="refill-modal">
+			<div class="modal-full-wrapper">
+				<div class="modal-close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.798" height="14.798" viewBox="0 0 14.798 14.798">
+  						<g transform="translate(0.707 0.707)">
+    						<line x2="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+    						<line x1="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+  						</g>
+					</svg>			
+				</div>
+				<h2 class="t-bold-300 t-darkgray t-uppercase">Пополнение баланса</h2>
+				<div class="input">
+					<span class="t-bold-300">Количество:</span>
+					<input type="text">
+					<span class="t-main">RTX</span>
+				</div>
+				<div class="tip">
+					<span>1 RTX = 0,5$</span>
+				</div>
+				<div class="input">
+					<span class="t-bold-300">Стоимость:</span>
+					<input type="text">
+					<span class="t-main">$</span>
+				</div>
+				<div class="payments">
+					<span class="t-black t-bold-300">Выберите способ оплаты</span>
+					<div class="payments-wrapper">
+						<div class="payment"></div>
+						<div class="payment active"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+						<div class="payment"></div>
+					</div>
+				</div>
+				<button class="btn">Пополнить</button>
+			</div>
+		</div>
+		
+		<!--WITHDRAW MODAL-->
+		<div style="display: none" class="withdraw-modal">
+			<div class="modal-full-wrapper">
+				<div class="modal-close-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.798" height="14.798" viewBox="0 0 14.798 14.798">
+  						<g transform="translate(0.707 0.707)">
+    						<line x2="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+    						<line x1="13.384" y2="13.384" fill="none" stroke="#fff" stroke-width="2"/>
+  						</g>
+					</svg>			
+				</div>
+				<div class="your-balance t-bold-300">
+					<span>Ваш баланс:</span>
+					<div><span class="t-uppercase t-bold-400">100 RTX</span></div>
+					<div><span class="t-uppercase">1 RTX = 0,5$</span></div>
+				</div>
+				<h2 class="t-bold-300 t-darkgray t-uppercase">Вывод средств</h2>
+				<div class="payments-text">
+					<span class="t-black t-bold-300">Укажите платежные реквизиты:</span>
+					<div class="payments-wrapper-text">
+						<div class="payment-text active"><span>Visa/MasterCard</span></div>
+						<div class="payment-text">Paypal</div>
+						<div class="payment-text">Payeer</div>
+						<div class="payment-text">Perfect Money</div>
+						<div class="payment-text">AdvCash</div>
+						<div class="payment-text">Okpay</div>
+						<div class="payment-text">Solid Trust Pay</div>
+						<div class="payment-text">Яндекс Деньги</div>
+						<div class="payment-text">Payza</div>
+						<div class="payment-text">Qiwi Wallet</div>
+						<div class="payment-text">Bitcoin</div>
+						<div class="payment-text">WalletOne</div>
+					</div>
+				</div>
+				<div class="sum">
+					<div style="position: relative;">
+						<span class="sum-onx">Сумма ONX</span>
+						<input type="text">
+						<span class="sum-dol">Сумма $</span>
+						<input type="text">
+					</div>
+					<button class="btn">Вывести</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!--MAIN CONTENT-->
+	<main class="main-content">
+		<h1 class="t-main hidden">Лоты - Onecli.</h1>
+		
+		<!--MONEY INTERACTIONS BUTTONS-->
+		<div class="lots-money-interactions div-flex df-spaceb container">
+			<div class="money-interaction div-flex-two">
+				<img src="images/lots/refill.png" alt="refill">
+				<span>Поплнить</span>
+			</div>
+			<div class="money-interaction div-flex-two">
+				<img src="images/lots/withdraw.png" alt="withdraw">
+				<span>Вывести</span>
+			</div>
+			<div class="money-interaction div-flex-two">
+				<img src="images/lots/send.png" alt="send">
+				<span>Отправить</span>
+			</div>
+			<div class="money-interaction div-flex-two">
+				<img src="images/lots/cart.png" alt="cart">
+				<span>Корзина</span>
+			</div>
+		</div>
+		
+		<!--LOTS SECTIONS-->
+		<div class="lots-section container">
+			<div class="current-balance">
+				<span>Баланс: <span>0 ONX</span></span>
+				<span>Просмотр = <span>1 ONX</span></span>
+				<span>1 ONX = 0.5$</span>
+			</div>
+			<div class="lots-wrapper">
+				<div class="lot-wrapper">
+					<div class="lot">
+						<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price opened">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">100 USD</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div style="display: none;"></div>
+								<p>
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div style="background-color: #d65252;">
+								<span class="t-white">Купить</span>
+							</div>
+						</div>
+					</div>
+					<div class="lot">
+						<svg xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">2 BTC</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div></div>
+								<p style="display: none;">
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div>
+								<span class="t-white">Показать</span>
+							</div>
+						</div>
+					</div>
+					<div class="lot">
+						<svg xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">350 EUR</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div></div>
+								<p style="display: none;">
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div>
+								<span class="t-white">Показать</span>
+							</div>
+						</div>
+					</div>
+					<div class="lot">
+						<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">25 ETH</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div></div>
+								<p style="display: none;">
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div>
+								<span class="t-white">Показать</span>
+							</div>
+						</div>
+					</div>
+					<div class="lot">
+						<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">500 USD</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div></div>
+								<p style="display: none;">
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div>
+								<span class="t-white">Показать</span>
+							</div>
+						</div>
+					</div>
+					<div class="lot">
+						<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">800 CNY</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div></div>
+								<p style="display: none;">
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div>
+								<span class="t-white">Показать</span>
+							</div>
+						</div>
+					</div>
+					<div class="lot">
+						<svg xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">120 UAH</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div></div>
+								<p style="display: none;">
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div>
+								<span class="t-white">Показать</span>
+							</div>
+						</div>
+					</div>
+					<div class="lot">
+						<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="44" height="28.769" viewBox="0 0 44 28.769">
+  							<g transform="translate(0)">
+    							<path d="M1461-2196h36a8,8,0,0,1,8,8v20.769Z" transform="translate(-1461 2196)" fill="#ffa200"/>
+    							<path d="M7.008,9.647,10.1,11.515l-.821-3.52,2.734-2.369-3.6-.305L7.008,2,5.6,5.32,2,5.626,4.734,7.994l-.821,3.52Z" transform="translate(26.985 2)" fill="#fff"/>
+  							</g>
+						</svg>
+						<div class="total-price">
+							<div>
+								<span class="t-white t-size-18 t-uppercase">4000 RUB</span>
+							</div>
+							<div>
+								<span class="t-darkgray">Код:</span>
+								<span class="t-black t-italic">ufc24k5</span>
+							</div>
+						</div>
+						<div class="timer"></div>
+						<div class="true-price">
+							<div>
+								<div></div>
+								<p style="display: none;">
+									<span class="t-uppercase t-darkgray">150 ONX</span><br>
+									<span class="t-uppercase">75 USD</span>
+								</p>
+							</div>
+							<div>
+								<span class="t-white">Показать</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pager">
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  						<g opacity="0.5">
+    						<g fill="none" stroke="#4f5a7b" stroke-width="1">
+      							<circle cx="12.5" cy="12.5" r="12.5" stroke="none"/>
+      							<circle cx="12.5" cy="12.5" r="12" fill="none"/>
+    						</g>
+    						<path d="M6.1,11.079h0L0,5.477,6.1,0l.818,1.267L2.334,5.477,7,9.766v.1l-.9,1.213Z" transform="translate(8.3 6.563)" fill="#4f5a7b"/>
+  						</g>
+					</svg>
+					<div class="pages">
+						<div class="pages-wrapper">
+							<div class="page active"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+						</div>
+						<div class="pages-wrapper second">
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+							<div class="page"></div>
+						</div>
+					</div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  						<g opacity="0.5">
+    						<g fill="none" stroke="#4f5a7b" stroke-width="1">
+      							<circle cx="12.5" cy="12.5" r="12.5" stroke="none"/>
+      							<circle cx="12.5" cy="12.5" r="12" fill="none"/>
+    						</g>
+    						<path d="M6.1,0h0L0,5.6l6.1,5.477.818-1.267L2.334,5.6,7,1.313v-.1L6.1,0Z" transform="translate(16.7 17.642) rotate(180)" fill="#4f5a7b"/>
+  						</g>
+					</svg>
+				</div>
+			</div>
+			<div class="lots-search">
+				<div class="search-wrapper" id="search-wrapper">
+					<h2 class="t-uppercase t-bold-400 t-size-18 t-gray"><span onClick="OpenStatsMenu()">Live статистика</span> | <span class="t-main">Поиск</span></h2>
+					<hr width="95%">
+					<div class="search-price div-flex df-col df-spacea">
+						<span class="t-size-14 t-main">Поиск по цене:</span>
+						<input type="text" placeholder="От...">
+						<input type="text" placeholder="До...">
+					</div>
+					<div class="search-type">
+						<span class="t-size-14 t-black">Выберите категорию:</span>
+						<div class="search-type-wrapper">
+							<div class="active"><span>Все</span></div>
+							<div class="active"><span>Текущие аукционы</span></div>
+							<div class="active"><span>Будущие аукционы</span></div>
+							<div><span>Горячие предложения</span></div>
+						</div>
+					</div>
+				</div>
+				<div style="display: none;" class="live-stats" id="live-stats">
+					<h2 class="t-uppercase t-bold-400 t-size-18 t-gray"><span class="t-main">Live статистика</span> | <span onClick="OpenSearchMenu()">Поиск</span></h2>
+					<hr width="95%">
+					<div class="last-transactions">
+						<span class="t-size-14 t-darkgray">Приобретённые лоты:</span>
+						<div class="transaction-wrapper">
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+							<div class="transaction">
+								<span>Hideo Kodjima</span>
+								<div>
+									<span class="t-uppercase t-white">2455 rtx</span>
+								</div>
+								<div>
+									<span class="t-uppercase t-white">Profit: 63%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--OPERATION LIST-->
+		<div class="operation-list container">
+			<table class="operations">
+				<tr>
+					<th>ID</th>
+					<th>Дата</th>
+					<th class="more"></th>
+					<th>Операция</th>
+					<th>Сумма</th>
+					<th>Баланс</th>
+					<th>Статус</th>
+				</tr>
+				<tr class="inprogress">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more inprogress">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td>0.0200000 $</td>
+					<td>555.555 $</td>
+					<td>В процессе</td>
+				</tr>
+				<tr class="success">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more success">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td>0.0200000 $</td>
+					<td>555.555 $</td>
+					<td>Выполнено</td>
+				</tr>
+				<tr class="success">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more success">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td>0.0200000 $</td>
+					<td>555.555 $</td>
+					<td>Выполнено</td>
+				</tr>
+				<tr class="success">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more success">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td>0.0200000 $</td>
+					<td>555.555 $</td>
+					<td>Выполнено</td>
+				</tr>
+				<tr class="failure">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more failure">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td colspan="2">Нажмите, чтобы узанть подробности</td>
+					<td>Отказано</td>
+				</tr>
+				<tr class="success">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more success">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td>0.0200000 $</td>
+					<td>555.555 $</td>
+					<td>Выполнено</td>
+				</tr>
+				<tr class="success">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more success">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td>0.0200000 $</td>
+					<td>555.555 $</td>
+					<td>Выполнено</td>
+				</tr>
+				<tr class="success">
+					<td>278</td>
+					<td>08.12.2021 / 11:39</td>
+					<td class="more success">Подробнее...</td>
+					<td>ВЫВОД СТРЕДСТВ</td>
+					<td>0.0200000 $</td>
+					<td>555.555 $</td>
+					<td>Выполнено</td>
+				</tr>
+			</table>
+			<div class="operations-table-pager div-flex df-spaceb t-gray">
+				<button>
+					<svg class="svg-pager" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+						<g fill="none" stroke="#4f5a7b" stroke-width="1">
+							<circle cx="12.5" cy="12.5" r="12.5" stroke="none"></circle>
+							<circle cx="12.5" cy="12.5" r="12" fill="none"></circle>
+						</g>
+						<path d="M6.1,11.079h0L0,5.477,6.1,0l.818,1.267L2.334,5.477,7,9.766v.1l-.9,1.213Z" transform="translate(8.3 6.563)" fill="#4f5a7b"></path>
+					</svg>
+				</button>
+				<p>
+					<span class="current-page">1</span> | <span class="total-pages">35</span>
+				</p>
+				<button>
+					<svg class="svg-pager" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+						<g fill="none" stroke="#4f5a7b" stroke-width="1">
+							<circle cx="12.5" cy="12.5" r="12.5" stroke="none"></circle>
+							<circle cx="12.5" cy="12.5" r="12" fill="none"></circle>
+						</g>
+						<path d="M6.1,0h0L0,5.6l6.1,5.477.818-1.267L2.334,5.6,7,1.313v-.1L6.1,0Z" transform="translate(16.7 17.642)rotate(180)" fill="#4f5a7b"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+		
+	</main>
+	
+	<script src="../scripts/main.js"></script>
+</body>
+</html>

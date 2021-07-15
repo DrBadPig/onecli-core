@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Биржа долей</title>
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="css/exchange.css" rel="stylesheet">
+	<link href="../images/logo.png" rel="icon">
+	<link href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<!--HEADER-->
+	<header class="main-header">
+		<!--LOGO CONTAINER-->
+		<div class="main-logo-div">
+			<img class="main-logo" src="../images/logo.png" alt="ONECLI. logo">
+			<img class="main-logo-title" src="../images/logo_title.png" alt="ONECLI. logo">
+		</div>
+		<!--HEADER RIGHT SIDE-->
+		<div class="header-user-info div-flex df-spaceb">
+			<!--USER INFO-->
+			<div class="main-user-info" onClick="onClickUserSubmenu()">
+				<span class="user-header-login t-black">User Login</span>
+				<img class="user-header-image" src="../images/bvadimnikol.jpg" alt="Your image">
+			</div>
+			<!--LANGUAGE CHOOSER-->
+			<div class="language-chooser div-flex df-center" onClick="onClickLanguageChooserMenu()">
+				<img src="../images/country-flags/russia.png" alt="russian">
+			</div>
+			<!--NAVIGATION MENU-->
+			<div id="main-header-menu" class="main-header-menu div-flex df-center" onClick="OpenNavMenu()">
+				<!--CLOSED MENU ICON-->
+				<svg class="menu-icon" id="main-menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 19">
+  					<g transform="translate(0 1)">
+ 	   					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+  	 					<line x2="16.349" transform="translate(0 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+  	  					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+				<!--OPENED MENU ICON-->
+				<svg class="menu-icon hidden" id="main-menu-svg-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.349 19">
+  					<g transform="translate(0 1)">
+    					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="16.349" transform="translate(9 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+			</div>
+		</div>
+	</header>
+	
+	<!--USER SETTING SUBMENU-->
+	<div class="user-submenu hidden" id="user_submenu">
+		<ul>
+			<li><a href="../settings/index.html">Аккант</a></li>
+			<li><a href="../settings/index.html">Настройки</a></li>
+			<li><a href="#">На главную</a></li>
+			<li><a href="#">Выход</a></li>
+		</ul>
+	</div>
+	
+	<!--LANGUAGE CHOOSER MENU-->
+	<div class="language-chooser-menu hidden" id="language-chooser-menu">
+		<div><img class="active" src="../images/country-flags/russia.png" alt="russian"></div>
+		<div><img src="../images/country-flags/united-kingdom.png" alt="uk english"></div>
+	</div>
+	
+	<!--NAVIGATION FULL-->
+	<nav class="main-navigation" id="fullNav">
+		<div class="main-navigation-wrapper">
+			<!-- NAVIGATION HEADER -->
+			<div class="nav-header div-flex-two">
+				<span class="t-white">Навигация</span>
+				<img src="../images/menu.png" alt="Menu" onClick="onClickNavigation()">
+			</div>
+			<!-- MENU -->
+			<ul class="menu-list">
+				<li><a href="../investments/index.html"><img src="../images/menu-icons/inv.png" alt="investments">Инвестиции в ONECLI.</a></li>
+				<li><a href="../stats/index.html"><img src="../images/menu-icons/stats.png" alt="investments">Статистика</a></li>
+				<li><a href="../team/index.html"><img src="../images/menu-icons/team.png" alt="team">Моя команда</a></li>
+				<li class="menu-active"><a href="../exchange/index.html"><img src="../images/menu-icons/br.png" alt="exchange">Биржа долей</a></li>
+				<li><a href="../history/index.html"><img src="../images/menu-icons/history.png" alt="exchange">История транзакций</a></li>
+				<li><a href="../lots/index.html"><img src="../images/menu-icons/lots.png" alt="lots">Лоты <span class="t-notify">[Beta]</span></a></li>
+				<li><a href="../idea/index.html"><img src="../images/menu-icons/idea.png" alt="idea">Идея ONECLI.</a></li>
+				<li><a href="../bounty/index.html"><img src="../images/menu-icons/btn.png" alt="bounty">Bounty кампания</a></li>
+				<li><a href="../promo/index.html"><img src="../images/menu-icons/promo.png" alt="promo">Промоматериалы</a></li>
+				<li><a href="../tickets/index.html"><img src="../images/menu-icons/tickets.png" alt="promo">Тикеты ONECLI.</a></li>
+				<li><a href="../faq/index.html"><img src="../images/menu-icons/faq.png" alt="faq">FAQ | Вопрос - ответ</a></li>
+				<li><a href="../game/index.html"><img src="../images/menu-icons/game.png" alt="game">Большая игра ONECLI.</a></li>
+				<li><a href="../news/index.html"><img src="../images/menu-icons/news.png" alt="game">Новости</a></li>
+			</ul>
+			<!-- SOCIALS -->
+			<div class="socials">
+				<ul class="socials-list hidden" id="socials-list">
+					<li><a href="https://www.youtube.com/channel/UClxixUM9qzOjoFtUd5RNBzQ"><img src="../images/socials/yt0.png" alt="YT"></a></li>
+					<li><a href="https://www.facebook.com/oneclicom/"><img src="../images/socials/f0.png" alt="FB"></a></li>
+					<li><a href="https://instagram.com/oneclicom"><img src="../images/socials/i0.png" alt="IN"></a></li>
+					<li><a href="https://twitter.com/oneclicom"><img src="../images/socials/tw0.png" alt="TW"></a></li>
+					<li><a href="https://teleg.one/onecli"><img src="../images/socials/t0.png" alt="TG"></a></li>
+					<li><a href="https://vk.com/onecli"><img src="../images/socials/vk0.png" alt="VK"></a></li>
+				</ul>
+				<span class="t-gray t-size-12" id="socials-h1" onClick="onClickSocials()">СОЦИАЛЬНЫЕ СЕТИ</span>
+				<img src="../images/str_left.png" alt="socials" onClick="onClickSocials()">
+			</div>
+			<!-- CRYPTO SECTION -->
+			<div class="crypto-rate-wrapper">
+				<div class="crypto-header div-flex-two">
+					<span class="t-white">Курсы криптовалют</span>
+					<img src="../images/bitcoin.png" alt="crypt">
+				</div>
+				<ul class="crypto-list">
+					<li>BITCOIN (BTC)<br>9531.19 USD (0.45%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>RIPPLE (XRP)<br>0.309862 USD (0.10%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>BITCOIN CASH (BCH)<br>306.20 USD (0.26%)</li>
+					<li>LITECOIN (LTC)<br>89.13 USD (0.04%)</li>
+					<li>CARDANO (ADA)<br>0.059253 USD (1.35%)</li>
+					<li>EOS (EOS)<br>4.29 USD (-1.51%)</li>
+					<li>STELLAR (XLM)<br>0.083855 USD (0.18%)</li>
+					<li>NEO (NEO)<br>11.39 USD (1.07%)</li>
+					<li>IOTA (MIOTA)<br>0.288540 USD (0.43%)</li>
+					<li>MONERO (XMR)<br>79.88 USD (2.05%)</li>
+					<li>DASH (DASH)<br>111.05 USD (1.23%)</li>
+					<li>TRON (TRX)<br>0.022540 USD (2.60%)</li>
+					<li>NEM (XEM)<br>0.063579 USD (-0.22%)</li>
+					<li>ETHEREUM CLASSIC (ETC)<br>5.95 USD (0.90%)</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!--MODALS-->
+	<div style="display: none;" class="modals">
+		
+	</div>
+	
+	<!--MAIN CONTENT-->
+	<main class="main-content">
+		<h1 class="t-main hidden">Биржа долей - Onecli.</h1>
+		
+		<!--SHARE EXCHANGE-->
+		<div class="share-exchange-block container">
+			<div class="decorative"></div>
+			<h2 class="t-main t-size-18 t-bold-400 t-uppercase">Биржа долей</h2>
+			<div class="tag">Скоро*</div>
+			<div class="share-exchange-wrapper">
+				<svg class="svg-pager" xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29">
+				  	<g transform="translate(28) rotate(90)">
+						<g fill="none" stroke="#34c28d" stroke-width="1">
+					  		<ellipse cx="14.5" cy="14" rx="14.5" ry="14" stroke="none"/>
+					  		<ellipse cx="14.5" cy="14" rx="14" ry="13.5" fill="none"/>
+						</g>
+						<path d="M7.029,12.776h0L0,6.315,7.029,0l.943,1.461L2.691,6.315l5.381,4.947v.115l-1.043,1.4Z" transform="translate(9.05 7.568)" fill="#34c28d"/>
+				  	</g>
+				</svg>
+				<div class="share-exchangers-wrapper">
+					<table class="exhangers-table">
+						<tr>
+						  	<td>Richman</td>
+						  	<td>5000 долей</td>
+						  	<td>3000,99$</td>
+						  	<td class="pro">PRO</td>
+						  	<td>My price: 0.071$</td>
+						  	<td>Market price: 0.077$</td>
+						 </tr>
+						<tr>
+						  	<td>Richman</td>
+						  	<td>5000 долей</td>
+						  	<td>3000,99$</td>
+						  	<td class="start">Start</td>
+						  	<td>My price: 0.071$</td>
+						  	<td>Market price: 0.077$</td>
+						 </tr>
+						<tr>
+						  	<td>Richman</td>
+						  	<td>5000 долей</td>
+						  	<td>3000,99$</td>
+						  	<td class="vip">Vip</td>
+						  	<td>My price: 0.071$</td>
+						  	<td>Market price: 0.077$</td>
+						 </tr>
+						<tr>
+						  	<td>Richman</td>
+						  	<td>5000 долей</td>
+						  	<td>3000,99$</td>
+						  	<td class="business">Business</td>
+						  	<td>My price: 0.071$</td>
+						  	<td>Market price: 0.077$</td>
+						 </tr>
+						<tr>
+						  	<td>Richman</td>
+						  	<td>5000 долей</td>
+						  	<td>3000,99$</td>
+						  	<td class="free">Free</td>
+						  	<td>My price: 0.071$</td>
+						  	<td>Market price: 0.077$</td>
+						 </tr>
+					</table>
+				</div>
+				<svg class="svg-pager" xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29">
+				  	<g transform="translate(28 -0.224) rotate(90)">
+						<g transform="translate(0.224)" fill="none" stroke="#34c28d" stroke-width="1">
+					  		<ellipse cx="14.5" cy="14" rx="14.5" ry="14" stroke="none"/>
+					  		<ellipse cx="14.5" cy="14" rx="14" ry="13.5" fill="none"/>
+						</g>
+						<path d="M7.029,0h0L0,6.461l7.029,6.315.943-1.461L2.691,6.461,8.073,1.514V1.4L7.03,0Z" transform="translate(19.444 20.345) rotate(180)" fill="#34c28d"/>
+				  	</g>
+				</svg>
+			</div>
+		</div>
+		
+	</main>
+	
+	<script src="../scripts/main.js"></script>
+</body>
+</html>

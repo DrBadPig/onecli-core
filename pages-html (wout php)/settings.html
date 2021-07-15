@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Настройки</title>
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="css/settings.css" rel="stylesheet">
+	<link href="../images/logo.png" rel="icon">
+	<link href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	
+	<!--HEADER-->
+	<header class="main-header">
+		<!--LOGO CONTAINER-->
+		<div class="main-logo-div">
+			<img class="main-logo" src="../images/logo.png" alt="ONECLI. logo">
+			<img class="main-logo-title" src="../images/logo_title.png" alt="ONECLI. logo">
+		</div>
+		<!--HEADER RIGHT SIDE-->
+		<div class="header-user-info div-flex df-spaceb">
+			<!--USER INFO-->
+			<div class="main-user-info" onClick="onClickUserSubmenu()">
+				<span class="user-header-login t-black">User Login</span>
+				<img class="user-header-image" src="../images/bvadimnikol.jpg" alt="Your image">
+			</div>
+			<!--LANGUAGE CHOOSER-->
+			<div class="language-chooser div-flex df-center" onClick="onClickLanguageChooserMenu()">
+				<img src="../images/country-flags/russia.png" alt="russian">
+			</div>
+			<!--NAVIGATION MENU-->
+			<div id="main-header-menu" class="main-header-menu div-flex df-center" onClick="OpenNavMenu()">
+				<!--CLOSED MENU ICON-->
+				<svg class="menu-icon" id="main-menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 19">
+  					<g transform="translate(0 1)">
+ 	   					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+  	 					<line x2="16.349" transform="translate(0 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+  	  					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+				<!--OPENED MENU ICON-->
+				<svg class="menu-icon hidden" id="main-menu-svg-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.349 19">
+  					<g transform="translate(0 1)">
+    					<line x2="25" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="16.349" transform="translate(9 9.067)" fill="none" stroke="#fff" stroke-width="2"/>
+    					<line x2="25" transform="translate(0 17)" fill="none" stroke="#fff" stroke-width="2"/>
+  					</g>
+				</svg>
+			</div>
+		</div>
+	</header>
+	
+	<!--USER SETTING SUBMENU-->
+	<div class="user-submenu hidden" id="user_submenu">
+		<ul>
+			<li><a href="index.html">Аккант</a></li>
+			<li><a href="index.html">Настройки</a></li>
+			<li><a href="#">На главную</a></li>
+			<li><a href="#">Выход</a></li>
+		</ul>
+	</div>
+	
+	<!--LANGUAGE CHOOSER MENU-->
+	<div class="language-chooser-menu hidden" id="language-chooser-menu">
+		<div><img class="active" src="../images/country-flags/russia.png" alt="russian"></div>
+		<div><img src="../images/country-flags/united-kingdom.png" alt="uk english"></div>
+	</div>
+	
+	<!--NAVIGATION FULL-->
+	<nav class="main-navigation" id="fullNav">
+		<div class="main-navigation-wrapper">
+			<!-- NAVIGATION HEADER -->
+			<div class="nav-header div-flex-two">
+				<span class="t-white">Навигация</span>
+				<img src="../images/menu.png" alt="Menu" onClick="onClickNavigation()">
+			</div>
+			<!-- MENU -->
+			<ul class="menu-list">
+				<li><a href="../investments/index.html"><img src="../images/menu-icons/inv.png" alt="investments">Инвестиции в ONECLI.</a></li>
+				<li><a href="../stats/index.html"><img src="../images/menu-icons/stats.png" alt="investments">Статистика</a></li>
+				<li><a href="../team/index.html"><img src="../images/menu-icons/team.png" alt="team">Моя команда</a></li>
+				<li><a href="../exchange/index.html"><img src="../images/menu-icons/br.png" alt="exchange">Биржа долей</a></li>
+				<li><a href="../history/index.html"><img src="../images/menu-icons/history.png" alt="exchange">История транзакций</a></li>
+				<li><a href="../lots/index.html"><img src="../images/menu-icons/lots.png" alt="lots">Лоты <span class="t-notify">[Beta]</span></a></li>
+				<li><a href="../idea/index.html"><img src="../images/menu-icons/idea.png" alt="idea">Идея ONECLI.</a></li>
+				<li><a href="../bounty/index.html"><img src="../images/menu-icons/btn.png" alt="bounty">Bounty кампания</a></li>
+				<li><a href="../promo/index.html"><img src="../images/menu-icons/promo.png" alt="promo">Промоматериалы</a></li>
+				<li><a href="../tickets/index.html"><img src="../images/menu-icons/tickets.png" alt="promo">Тикеты ONECLI.</a></li>
+				<li><a href="../faq/index.html"><img src="../images/menu-icons/faq.png" alt="faq">FAQ | Вопрос - ответ</a></li>
+				<li><a href="../game/index.html"><img src="../images/menu-icons/game.png" alt="game">Большая игра ONECLI.</a></li>
+				<li><a href="../news/index.html"><img src="../images/menu-icons/news.png" alt="game">Новости</a></li>
+			</ul>
+			<!-- SOCIALS -->
+			<div class="socials">
+				<ul class="socials-list hidden" id="socials-list">
+					<li><a href="https://www.youtube.com/channel/UClxixUM9qzOjoFtUd5RNBzQ"><img src="../images/socials/yt0.png" alt="YT"></a></li>
+					<li><a href="https://www.facebook.com/oneclicom/"><img src="../images/socials/f0.png" alt="FB"></a></li>
+					<li><a href="https://instagram.com/oneclicom"><img src="../images/socials/i0.png" alt="IN"></a></li>
+					<li><a href="https://twitter.com/oneclicom"><img src="../images/socials/tw0.png" alt="TW"></a></li>
+					<li><a href="https://teleg.one/onecli"><img src="../images/socials/t0.png" alt="TG"></a></li>
+					<li><a href="https://vk.com/onecli"><img src="../images/socials/vk0.png" alt="VK"></a></li>
+				</ul>
+				<span class="t-gray t-size-12" id="socials-h1" onClick="onClickSocials()">СОЦИАЛЬНЫЕ СЕТИ</span>
+				<img src="../images/str_left.png" alt="socials" onClick="onClickSocials()">
+			</div>
+			<!-- CRYPTO SECTION -->
+			<div class="crypto-rate-wrapper">
+				<div class="crypto-header div-flex-two">
+					<span class="t-white">Курсы криптовалют</span>
+					<img src="../images/bitcoin.png" alt="crypt">
+				</div>
+				<ul class="crypto-list">
+					<li>BITCOIN (BTC)<br>9531.19 USD (0.45%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>RIPPLE (XRP)<br>0.309862 USD (0.10%)</li>
+					<li>ETHEREUM (ETH)<br>209.83 USD (1.18%)</li>
+					<li>BITCOIN CASH (BCH)<br>306.20 USD (0.26%)</li>
+					<li>LITECOIN (LTC)<br>89.13 USD (0.04%)</li>
+					<li>CARDANO (ADA)<br>0.059253 USD (1.35%)</li>
+					<li>EOS (EOS)<br>4.29 USD (-1.51%)</li>
+					<li>STELLAR (XLM)<br>0.083855 USD (0.18%)</li>
+					<li>NEO (NEO)<br>11.39 USD (1.07%)</li>
+					<li>IOTA (MIOTA)<br>0.288540 USD (0.43%)</li>
+					<li>MONERO (XMR)<br>79.88 USD (2.05%)</li>
+					<li>DASH (DASH)<br>111.05 USD (1.23%)</li>
+					<li>TRON (TRX)<br>0.022540 USD (2.60%)</li>
+					<li>NEM (XEM)<br>0.063579 USD (-0.22%)</li>
+					<li>ETHEREUM CLASSIC (ETC)<br>5.95 USD (0.90%)</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!--MAIN CONTENT-->
+	<main class="main-content">
+		<h1 class="t-main hidden">Настройки</h1>
+		
+		<!--SETTINGS INFO-->
+		<div class="settings-info container">
+			<div class="div-flex df-center">
+				<svg xmlns="http://www.w3.org/2000/svg" width="161" height="4" viewBox="0 0 161 4">
+					<rect width="161" height="4" rx="2" fill="#34c28d"/>
+				</svg>
+			</div>
+			<div class="settings-info-wrapper">
+				<h2 class="t-white t-uppercase t-size-22 t-bold-400">Настройка аккаунта</h2>
+				<span class="t-main t-uppercase t-size-16">Внимание!</span>
+				<p class="t-black t-size-14">Для получения и активации личного сайта Onecli. необходимо обязательно заполнить следующие информационные блоки:</p>
+				<p class="t-black t-size-14">1. Аватарка;<br>2. Общая информация;<br>3. Социальные сети.</p>
+				<p class="t-black t-size-14">Если какой либо из блоков не будет заполнен или в них будет введена недостоверная информация - личный сайт Onecli. активирован не будет. </p>
+				<p class="t-black t-size-14">Личный сайт позволит многократно увеличить статистику вашего заработка и поднять общую конверсию вашего развития в компании. Маркетологи Onecli. полностью продумали структуру, психологию поведения пользователей и концепцию сайта, в связи с чем новые участники будут быстро знакомиться с продуктом и принимать решение зарегистрироваться на платформе Onecli. в вашу команду. </p>
+				<div class="pws-info div-flex df-center">
+					<span class="t-white">Ссылку на сайт вы можете получить в разделе <span class="t-main">"Моя команда"</span>.</span>
+				</div>
+			</div>
+		</div>
+		
+		<!--USER INFO-->
+		<div class="user-info-section container">
+			<!--PROFILE INFO-->
+			<div class="profile-info container">
+				<div class="photo-section div-flex df-col df-spaceb">
+					<svg xmlns="http://www.w3.org/2000/svg" width="66" height="33" viewBox="0 0 66 33">
+  						<g transform="translate(-514 -582)">
+    						<path d="M66,33A33,33,0,0,1,0,33Z" transform="translate(514 549)" fill="#34c28d"/>
+    						<g transform="translate(535.686 586.426)">
+      							<g transform="translate(2.314 0.574)">
+        							<g>
+          								<path d="M16.27,5.474H13.933L12.584,4H8.16V5.474h3.775l1.349,1.474H16.27V15.8H4.474V9.16H3V15.8A1.479,1.479,0,0,0,4.474,17.27h11.8A1.479,1.479,0,0,0,17.744,15.8V6.949A1.479,1.479,0,0,0,16.27,5.474Z" transform="translate(-0.788 -1.788)" fill="#fff"/>
+          								<path d="M8,12.686A3.686,3.686,0,1,0,11.686,9,3.687,3.687,0,0,0,8,12.686Zm3.686-2.212a2.212,2.212,0,1,1-2.212,2.212A2.218,2.218,0,0,1,11.686,10.474Z" transform="translate(-2.102 -3.102)" fill="#fff"/>
+          								<path d="M3.686,4.686H5.9V3.212H3.686V1H2.212V3.212H0V4.686H2.212V6.9H3.686Z" transform="translate(0 -1)" fill="#fff"/>
+        							</g>
+      							</g>
+    						</g>
+						</g>
+					</svg>
+					<div class="user-login div-flex-two">
+						<input type="text" class="input-transparent">
+<!--						<span>Hideo Kodjima</span>-->
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  							<g transform="translate(-417 -1041)">
+    							<circle cx="9" cy="9" r="9" transform="translate(417 1041)" fill="#34c28d"/>
+    								<g transform="translate(421 1045)">
+      									<g>
+        									<path d="M0,0H10.71V10.71H0Z" fill="none"/>
+      									</g>
+      								<g transform="translate(1.339 1.339)">
+        								<path id="change_decor" d="M7.936,5.687l.411.411L4.3,10.14H3.893V9.73L7.936,5.687M9.542,3a.447.447,0,0,0-.312.129l-.817.817L10.087,5.62,10.9,4.8a.444.444,0,0,0,0-.629L9.859,3.129A.438.438,0,0,0,9.542,3ZM7.936,4.424,3,9.359v1.674H4.674L9.609,6.1,7.936,4.424Z" transform="translate(-3 -3)" fill="#fff"/>
+      								</g>
+    							</g>
+  							</g>
+						</svg>
+					</div>
+				</div>
+				<div class="profile-info-wrapper t-bold-300">
+					<div class="photo-disclaimer">
+						<p>Изображение должно быть формата .JPG или .PNG. Максимальный размер: 2 мб.</p>
+					</div>
+					<div class="user-about-section">
+						<div class="div-flex df-spaceb">
+							<span class="t-uppercase">Должность:</span>
+							<div>
+								<span>Дизайнер ONECLI.</span>
+								<input style="display: none;" type="text">
+								
+							</div>
+						</div>
+						<div class="div-flex df-spaceb">
+							<span class="t-uppercase">О себе:</span>
+							<textarea class="text-area t-bold-300" wrap="soft">Дизайнер компании ONECLI. на протяжении 7 лет, Разработчик дизайна приложения, лендинга, личного кабинета. Основатель команды "Some Team" с оборотом 350к+. Личный оборот 25к ежемесячно.</textarea>
+						</div>
+					</div>
+					<div class="user-socials">
+						<div class="user-socials-header">
+							<span class="t-main t-uppercase t-size-14">Внимание!</span>
+							<span class="t-size-12">Адрес соц. сетей вводить с префиксом https://</span>
+						</div>
+						<div class="user-socials-list">
+							<div class="div-flex-two">
+								<span class="t-uppercase">Vk.com</span>
+								<input type="text">
+							</div>
+							<div class="div-flex-two">
+								<span class="t-uppercase">Instagram</span>
+								<input type="text">
+							</div>
+							<div class="div-flex-two">
+								<span class="t-uppercase">Facebook</span>
+								<input type="text">
+							</div>
+							<div class="div-flex-two">
+								<span class="t-uppercase">Telegram</span>
+								<input type="text">
+							</div>
+						</div>
+					</div>
+					<button class="btn">Сохранить</button>
+				</div>
+			</div>
+			<!--ACCOUNT INFO-->
+			<div class="account-info container">
+				<h2 class="t-uppercase t-bold-400 t-white t-size-16">Техническая информация</h2>
+				<div class="main-account-info t-bold-300">
+					<div class="div-flex-two">
+						<span class="t-black t-uppercase">Логин:</span>
+						<span class="t-darkgray">Grandzilla79</span>
+					</div>
+					<hr width="90%">
+					<div class="div-flex-two">
+						<span class="t-black t-uppercase">Email:</span>
+						<span class="t-darkgray">alimov-dev@mail.ru</span>
+					</div>
+					<hr width="90%">
+					<div class="div-flex-two">
+						<span class="t-black t-uppercase">Уведомления по электронной почте:</span>
+						<label class="switch">
+  							<input type="checkbox">
+  							<span class="slider round"></span>
+						</label>
+					</div>
+					<hr width="90%">
+					<div class="div-flex-two df-col">
+						<span class="t-black t-size-12 t-uppercase">Уникальный код для участия в игре и подключения бота:</span>
+						<p class="t-white t-size-12 t-uppercase t-bold-300 t-center">iqBtXJaQn6wx1mHc4_zIudM0lP39fK8-</p>
+					</div>
+				</div>
+				<div class="password-change t-bold-300">
+					<h3 class="t-uppercase t-bold-300 t-size-16">Изменение пароля</h3>
+					<div class="div-flex-two">
+						<span class="t-size-14">Код из смс:</span>
+						<span class="send-sms t-size-14 t-main">Выслать код на номер</span>
+					</div>
+					<div class="sms-code div-flex-two">
+						<span class="t-size-14">GH2K8L</span>
+						<span class="send-sms t-size-14 t-darkgray">Код действителен ещё <span>180</span> сек.</span>
+					</div>
+					<div class="div-flex-two">
+						<span class="t-size-14">Новый пароль:</span>
+					</div>
+					<div class="password-input-div div-flex-two">
+						<input type="password">
+						<div class="div-flex df-center">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  								<g>
+    								<path d="M0,0H24V24H0Z" fill="none"/>
+  								</g>
+  								<g>
+    								<g>
+      								<path d="M12,6.5A9.77,9.77,0,0,1,20.82,12,9.822,9.822,0,0,1,3.18,12,9.77,9.77,0,0,1,12,6.5m0-2A11.827,11.827,0,0,0,1,12a11.817,11.817,0,0,0,22,0A11.827,11.827,0,0,0,12,4.5Z" fill="#232733"/>
+      								<path d="M12,9.5A2.5,2.5,0,1,1,9.5,12,2.5,2.5,0,0,1,12,9.5m0-2A4.5,4.5,0,1,0,16.5,12,4.507,4.507,0,0,0,12,7.5Z" fill="#232733"/>
+    								</g>
+  								</g>
+							</svg>
+						</div>
+					</div>
+					<div class="div-flex-two">
+						<span class="t-size-14">Повтор пароля:</span>
+					</div>
+					<div class="password-input-div div-flex-two">
+						<input type="password">
+						<div class="div-flex df-center">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  								<g>
+    								<path d="M0,0H24V24H0Z" fill="none"/>
+  								</g>
+  								<g>
+    								<g>
+      								<path d="M12,6.5A9.77,9.77,0,0,1,20.82,12,9.822,9.822,0,0,1,3.18,12,9.77,9.77,0,0,1,12,6.5m0-2A11.827,11.827,0,0,0,1,12a11.817,11.817,0,0,0,22,0A11.827,11.827,0,0,0,12,4.5Z" fill="#232733"/>
+      								<path d="M12,9.5A2.5,2.5,0,1,1,9.5,12,2.5,2.5,0,0,1,12,9.5m0-2A4.5,4.5,0,1,0,16.5,12,4.507,4.507,0,0,0,12,7.5Z" fill="#232733"/>
+    								</g>
+  								</g>
+							</svg>
+						</div>
+					</div>
+					<button class="btn">Сохранить</button>
+				</div>
+				<div class="payments t-bold-300">
+					<h3 class="t-uppercase t-bold-300 t-size-16">Платежные реквизиты</h3>
+					<div class="payments-list">
+						<div class="div-flex-two">
+							<span class="">AdvCash кошелек:</span>
+							<input type="text" placeholder="Не указано">
+						</div>
+						<div class="div-flex-two">
+							<span class="">Bitcoin кошелек:</span>
+							<input type="text" placeholder="Не указано">
+						</div>
+						<div class="div-flex-two">
+							<span class="">Payeer кошелек:</span>
+							<input style="background-color: #34C38D;" type="text" placeholder="Не указано">
+						</div>
+						<div class="div-flex-two">
+							<span class="">QIWI кошелек:</span>
+							<input style="background-color: #34C38D;" type="text" placeholder="Не указано">
+						</div>
+						<div class="div-flex-two">
+							<span>??? кошелек:</span>
+							<input style="background-color: #34C38D;" type="text" placeholder="Не указано">
+						</div>
+					</div>
+					<div class="warning div-flex df-center">
+						<p class="t-white">Внимательно проверяйте и указывайте свои реквизиты, поскольку последующее редактирование возможно только через техническую поддержку.</p>
+					</div>
+				</div>
+				<button class="btn">Сохранить</button>
+			</div>
+		</div>
+		
+	</main>
+	
+	<!--SCRIPTS-->
+	<script src="../scripts/main.js"></script>
+</body>
+</html>
